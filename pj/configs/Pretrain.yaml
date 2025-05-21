@@ -1,0 +1,23 @@
+bert_config: 'configs/config_bert.json'
+node_dim: 768
+edge_dim: 768
+num_layer: 8
+
+graph_width: 768
+embed_dim: 128
+batch_size: 4
+temp: 0.07
+mlm_probability: 0.15
+queue_size: 65536
+
+momentum: 0.995
+alpha: 0.4
+val_epoch_interval: 1
+mlm_coef: 0.3
+mgm_coef: 0.3
+gtm_coef: 0.7
+gtc_coef: 0.3
+
+optimizer: {opt: adamW, lr: 1e-4, weight_decay: 0.0001}
+schedular: {sched: cosine, lr: 1e-4, epochs: 50, min_lr: 1e-5, decay_rate: 1, warmup_lr: 1e-5, warmup_epochs: 10, cooldown_epochs: 0}
+#schedular: {sched: cosine, lr: 1e-4, epochs: 30, min_lr: 1e-5, decay_rate: 1, warmup_lr: 1e-5, warmup_epochs: 20, cooldown_epochs: 0}
